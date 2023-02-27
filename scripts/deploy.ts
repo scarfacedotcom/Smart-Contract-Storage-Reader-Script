@@ -21,10 +21,11 @@ async function main() {
   let AavecontractAddress = '0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9';
   let index = 0;
 for (index = 0; index < 10; index++){
- console.log(`[${index}]` + 
+ console.log(`Reading from [${index}]` + 
    await web3.eth.getStorageAt(AavecontractAddress, index));
    const contentsNum = await hexToNum.hexToNum(await web3.eth.getStorageAt(AavecontractAddress, index));
    console.log(contentsNum);
+   //console.log(web3.utils.toAscii(contentsNum));
 }
 
 
